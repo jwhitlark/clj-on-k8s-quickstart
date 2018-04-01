@@ -1,5 +1,7 @@
 # Future Directions
 
+## Use Luminus?
+
 ## Multiple apps (vanilla K8s)
 
 ## Adding a database
