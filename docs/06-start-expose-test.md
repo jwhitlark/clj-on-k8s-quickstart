@@ -1,7 +1,10 @@
 # Starting, exposing and testing a Clojure app.
 
+**TODO: Explain why a replica set, and where to find lower level docs**
+
 ## Writing the replica set
 
+``` yaml
 apiVersion: extensions/v1beta1
 kind: ReplicaSet
 metadata:
@@ -24,12 +27,15 @@ spec:
           ports:
             - containerPort: 3000  # Webapp
             - containerPort: 7000  # Repl
+```
             
 ## Deploy the replica set
 
 ``` shell
 kubectl apply -f hey-rs.yaml
 ```
+
+**TODO: all below**
 
 ## Check it
 
@@ -43,3 +49,4 @@ kubectl apply -f hey-rs.yaml
 
 ## Cleaning up the replica set
 
+Next: [Future directions](07-future.md)

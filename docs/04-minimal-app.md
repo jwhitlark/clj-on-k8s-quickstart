@@ -40,6 +40,8 @@ mkdir -p hey-clj/src/hey
   (jetty/run-jetty handler {:port 3000}))
 ```
 
-## Run it
+## Run it locally
+
+**TODO**
 
 Next: [Create the Docker Image](05-create-image.md)
