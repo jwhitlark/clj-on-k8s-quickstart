@@ -9,34 +9,22 @@ FROM clojure:lein-alpine
 
 RUN mkdir -p /usr/src/app
 WORKDIR /usr/src/app
-COPY project.clj /usr/src/app/
-RUN lein deps
 COPY . /usr/src/app
 RUN lein uberjar
-CMD ["java", "-jar", "target/hey-0.0.1--standalone.jar"]
+CMD ["java", "-jar", "target/hey-0.0.1-standalone.jar"]
 ```
 
 ``` console
 $ docker image build -t clj-on-k8s/hey:0.0.1 .
 ```
 
-This image weighs in at 157MB
+This image weighs in at 157MB.  See [Minimal Image](05b-minimal-image.md) for how to lower the size of the deployed image.
 
 ## Run the image locally
 
 ``` console
 $ docker run -p 3000:3000 clj-on-k8s/hey:0.0.1
 ```
-
-## Minimal Image
-
-The minimal image is **TODO**, space savings of **TODO**
-
-https://docs.docker.com/develop/develop-images/multistage-build/#name-your-build-stages
-https://sunng.info/blog/custom-jre-for-clojure-app-distribution.html
-http://dev.solita.fi/2018/01/24/Java9-modules-Spring-Boot-2-Docker.html
-https://github.com/juxt/pack.alpha/blob/master/src/mach/pack/alpha/capsule.clj
-
 
 ## Push the image
 
@@ -91,14 +79,6 @@ DIGEST        TAGS   TIMESTAMP
 33c9487d64b7  0.0.1  2018-04-06T15:57:06
 
 ```
-
-### References
-
-https://cloud.google.com/container-registry/docs/pushing-and-pulling?hl=en_US&_ga=2.167371894.-910061897.1517597687
-https://cloud.google.com/container-registry/docs/
-
-
-
 Next: [Start, expose, and test the service](06-start-expose-test.md)
 
 
