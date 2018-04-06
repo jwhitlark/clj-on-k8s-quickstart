@@ -24,12 +24,18 @@ Fetching cluster endpoint and auth data.
 kubeconfig entry generated for hello-clojure.
 ```
 
-**TODO**
-
 ## Verify
+``` console
+$ gcloud container clusters list
+NAME           LOCATION    MASTER_VERSION  MASTER_IP     MACHINE_TYPE   NODE_VERSION  NUM_NODES  STATUS
+hello-clojure  us-west1-a  1.9.6-gke.0     XX.XX.XX.XX   n1-standard-1  1.9.6-gke.0   3          RUNNING
 
-**TODO**
 
+$ kubectl config get-contexts
+
+CURRENT   NAME                                       CLUSTER                                    AUTHINFO                                   NAMESPACE
+*         gke_core-XXXXXX_us-west1-a_hello-clojure   gke_core-XXXXXX_us-west1-a_hello-clojure   gke_core-XXXXXX_us-west1-a_hello-clojure
+```
 
 
 Next: [A Minimal Webapp](04-minimal-app.md)
