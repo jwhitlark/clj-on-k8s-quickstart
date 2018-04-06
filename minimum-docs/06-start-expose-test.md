@@ -76,6 +76,27 @@ hello-clj   LoadBalancer   10.39.249.199   XX.XX.XX.XX   3000:31655/TCP   30s
 
 Then navigate to http://External-IP:3000
 
+## Looking at logs
+
+``` console
+$ kubectl get pods
+
+NAME                         READY     STATUS    RESTARTS   AGE
+hello-clj-5cc48f6f69-mvqqb   1/1       Running   0          25m
+
+$ kubectl logs hello-clj-5cc48f6f69-mvqqb
+
+2018-04-06 23:27:39.671:INFO::main: Logging initialized @1852ms
+2018-04-06 23:27:39.888:INFO:oejs.Server:main: jetty-9.2.z-SNAPSHOT
+2018-04-06 23:27:39.928:INFO:oejs.ServerConnector:main: Started ServerConnector@6b6fb701{HTTP/1.1}{0.0.0.0:3000}
+2018-04-06 23:27:39.929:INFO:oejs.Server:main: Started @2109ms
+```
+
+**TODO:Show how to navigate to stackdriver page**
+https://console.cloud.google.com/logs/viewer
+
+GKE Container,hello-clojure,default 
+
 ## Fixing mistakes
 ``` console
 kubectl delete svc,deployment hello-clj
