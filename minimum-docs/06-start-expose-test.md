@@ -74,7 +74,7 @@ NAME        TYPE           CLUSTER-IP      EXTERNAL-IP   PORT(S)          AGE
 hello-clj   LoadBalancer   10.39.249.199   XX.XX.XX.XX   3000:31655/TCP   30s
 ```
 
-Then navigate to http://<External-IP>:3000
+Then navigate to http://External-IP:3000
 
 ## Fixing mistakes
 ``` console
