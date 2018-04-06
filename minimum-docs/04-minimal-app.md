@@ -12,8 +12,7 @@ mkdir -p hey-clj/src/hey
 (defproject hey "0.0.1"
   :dependencies [[org.clojure/clojure "1.9.0"]
                  [ring/ring-core "1.6.3"]
-                 [ring/ring-jetty-adapter "1.6.3"]
-                 ]
+                 [ring/ring-jetty-adapter "1.6.3"]]
   :main hey.core)
 ```
 
@@ -22,27 +21,29 @@ mkdir -p hey-clj/src/hey
 ``` clojure
 (ns hey.core
   (:gen-class)
-  (:require
-   [ring.adapter.jetty :as jetty]
-   ))
+  (:require [ring.adapter.jetty :as jetty]))
 
-;; TODO: move from top level
-(or (System/getenv "DATABASE_URL") 
-    "http://localhost/mydb")
-
-(defn handler [request]
+(defn handler [my-name request]
   {:status 200
    :headers {"Content-Type" "text/html"}
-   :body "Hello World from Clojure, Docker, and Kubernetes"})
+   :body (format "Hello %s from Clojure, Docker, and Kubernetes." my-name)})
 
 (defn -main [& args]
-  (println "foo")
-  (jetty/run-jetty handler {:port 3000}))
+  (let [my-name (or (System/getenv "MY_NAME") 
+                     "World")]
+    (jetty/run-jetty (partial handler my-name) {:port 3000})))
 ```
 
-## Run it locally
+## Run it locally, without an environment variable
 
-**TODO**
+``` console
+$ lein run
+```
+
+## Run it locally, with an environment variable
+``` console
+$ MY_NAME=Monty lein run
+```
 
 Next: [Create the Docker Image](05-create-image.md)
 
