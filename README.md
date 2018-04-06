@@ -11,7 +11,7 @@ Paths through this.
 
 * What about helm?
 
-[Start here](docs/01-prerequisites.md)
+[Start here](minimum-docs/01-prerequisites.md)
 
 
 
