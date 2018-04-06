@@ -1,53 +1,85 @@
 # Starting, exposing and testing a Clojure app.
 
-**TODO: Explain why a replica set, and where to find lower level docs**
+## Run it
 
-## Writing the replica set
+``` console
+$ kubectl run hello-clj --image gcr.io/core-XXXXXX/hey:0.0.1 --port 3000 --env="MY_NAME=Python"
 
-``` yaml
-apiVersion: extensions/v1beta1
-kind: ReplicaSet
-metadata:
-  name: hey-clj
-  namespace: default
-spec:
-  replicas: 1
-  template:
-    metadata:
-      labels:
-        app: hey-clj
-        version: "0.0.1"
-    spec:
-      containers:
-        - image: <<<<fixme>>>>
-          name: hey-clj
-          env:
-            - name: DATABASE_URL
-              value: jdbc:postgresql://pg-two.jw-test.svc.cluster.local/c4?user=postgres&password=notclever
-          ports:
-            - containerPort: 3000  # Webapp
-            - containerPort: 7000  # Repl
-```
-            
-## Deploy the replica set
-
-``` shell
-kubectl apply -f hey-rs.yaml
+deployment "hello-clj" created
 ```
 
-**TODO: all below**
+### See what you've got
 
-## Check it
+``` console
+kubectl get deployments
+NAME        DESIRED   CURRENT   UP-TO-DATE   AVAILABLE   AGE
+hello-clj   1         1         1            1           1m
+```
 
-## Proxy it
+#### More detail
 
-## Check it via proxy
+``` console
+k describe deployment hello-clj
+Name:                   hello-clj
+Namespace:              default
+CreationTimestamp:      Fri, 06 Apr 2018 16:27:36 -0700
+Labels:                 run=hello-clj
+Annotations:            deployment.kubernetes.io/revision=1
+Selector:               run=hello-clj
+Replicas:               1 desired | 1 updated | 1 total | 1 available | 0 unavailable
+StrategyType:           RollingUpdate
+MinReadySeconds:        0
+RollingUpdateStrategy:  1 max unavailable, 1 max surge
+Pod Template:
+  Labels:  run=hello-clj
+  Containers:
+   hello-clj:
+    Image:  gcr.io/core-XXXXXX/hey:0.0.1
+    Port:   3000/TCP
+    Environment:
+      MY_NAME:  Python
+    Mounts:     <none>
+  Volumes:      <none>
+Conditions:
+  Type           Status  Reason
+  ----           ------  ------
+  Available      True    MinimumReplicasAvailable
+OldReplicaSets:  <none>
+NewReplicaSet:   hello-clj-5cc48f6f69 (1/1 replicas created)
+Events:
+  Type    Reason             Age   From                   Message
+  ----    ------             ----  ----                   -------
+  Normal  ScalingReplicaSet  16s   deployment-controller  Scaled up replica set hello-clj-5cc48f6f69 to 1
+```
+
+## Optional: Port-forward to it to test before exposing it
+
+**TODO**
 
 ## Expose it
 
-## Check it publicly
+``` console
+$ kubectl expose deployment hello-clj --type "LoadBalancer"
 
-## Cleaning up the replica set
+service "hello-clj" exposed
+```
+
+## Connect from outside
+
+Keep running until External-IP changes from <pending> to an ip.
+
+``` console
+kubectl get svc hello-clj
+NAME        TYPE           CLUSTER-IP      EXTERNAL-IP   PORT(S)          AGE
+hello-clj   LoadBalancer   10.39.249.199   XX.XX.XX.XX   3000:31655/TCP   30s
+```
+
+Then navigate to http://<External-IP>:3000
+
+## Fixing mistakes
+``` console
+kubectl delete svc,deployment hello-clj
+```
 
 Next: [Back to Readme](../README.md)
 
