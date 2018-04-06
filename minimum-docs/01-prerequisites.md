@@ -6,12 +6,15 @@ To get started fast, we're using GCP and Google K8s.  You can get a $300 credit 
 
 ### Signing up for a GCP account
 
+https://cloud.google.com/free/
+
 ## Services we'll be using.
 
 ### GCP Kubernetes Engine
 
 ### GCP Container Registry
 
+More info: 
 https://cloud.google.com/container-registry/docs/quickstart
 
 Next: [Install Tools](02-install-tools.md)

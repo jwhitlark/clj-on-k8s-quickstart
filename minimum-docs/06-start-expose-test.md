@@ -49,4 +49,6 @@ kubectl apply -f hey-rs.yaml
 
 ## Cleaning up the replica set
 
-Next: [Future directions](07-future.md)
+Next: [Back to Readme](../README.md)
+
+Now you can take down your cluster, see [Cleanup](99-cleanup.md)

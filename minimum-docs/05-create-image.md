@@ -43,3 +43,6 @@ https://cloud.google.com/container-registry/docs/
 
 
 Next: [Start, expose, and test the service](06-start-expose-test.md)
+
+
+If you need to take down your cluster, see [Cleanup](99-cleanup.md)

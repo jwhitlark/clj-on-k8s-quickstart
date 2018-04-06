@@ -2,7 +2,18 @@
 
 ## Goals and Rational
 
+Paths through this.
+
+1. Absolute Minimum setup, to see a clj response publicly
+2. two services talking
+3. Luminus
+4. istio
+
+* What about helm?
+
 [Start here](docs/01-prerequisites.md)
+
+
 
 **TODO: Anything I need out of below?** 
 
