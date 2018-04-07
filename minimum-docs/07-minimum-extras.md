@@ -68,8 +68,11 @@ telnet 127.0.0.1 5555
 **TODO**
 
 ## SSL
-Preferred, probably
-    https://cloud.google.com/kubernetes-engine/docs/tutorials/http-balancer
+**Oops.  Needs rethink.  The stack overflow seems the best so far.**
+
+https://cloud.google.com/kubernetes-engine/docs/tutorials/http-balancer
+
+https://stackoverflow.com/questions/42109659/how-to-get-ssl-on-a-kubernetes-application
 
 1. Change the svc type to nodeport
 
