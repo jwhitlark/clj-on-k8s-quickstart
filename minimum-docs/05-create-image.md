@@ -26,19 +26,23 @@ This image weighs in at 157MB.  See [Minimal Image](05b-minimal-image.md) for ho
 $ docker run -p 3000:3000 clj-on-k8s/hey:0.0.1
 ```
 
-## Push the image
+## Pushing the image
 
-``` shell
-# Verify your project name
+### Verify your project name
+``` console
 $ gcloud projects list
 
 PROJECT_ID     NAME           PROJECT_NUMBER
 core-XXXXXX    Core           XXXXXXXXXXXX
 
-# Tag it
+```
+### Tag it so that it can be pushed to GCP
+``` console
 $ docker tag clj-on-k8s/hey:0.0.1 gcr.io/core-XXXXXX/hey:0.0.1
+```
 
-# Setup authentication
+### Setup authentication
+``` console
 $ gcloud auth configure-docker
 
 The following settings will be added to your Docker config file
@@ -55,7 +59,9 @@ located at [/Users/username/.docker/config.json]:
 
 Do you want to continue (Y/n)?
 
-# Push it
+```
+### Perform the push
+``` console
 $ docker push gcr.io/core-XXXXXX/hey 
 
 The push refers to repository [gcr.io/core-XXXXXX/hey]
@@ -72,13 +78,16 @@ c9b26f41504c: Layer already exists
 cd7100a72410: Layer already exists
 0.0.1: digest: sha256:33c9487d64b716cb7dba45862f0250ed0e6fd91e8747e3a789615318a7518d17 size: 2628
 
-# Verify
+```
+### Verify the image has been pushed
+``` console
 $ gcloud container images list-tags gcr.io/core-XXXXXX/hey 
 
 DIGEST        TAGS   TIMESTAMP
 33c9487d64b7  0.0.1  2018-04-06T15:57:06
-
 ```
+
+
 Next: [Start, expose, and test the service](06-start-expose-test.md)
 
 
