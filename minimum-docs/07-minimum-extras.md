@@ -61,3 +61,6 @@ telnet 127.0.0.1 5555
 ## SSL
 **TODO**
 
+When you're ready, you can go [back to the Readme](../README.md).
+
+Don't forget to take down your cluster, so you won't be charged for it!  See [Cleanup](99-cleanup.md)
