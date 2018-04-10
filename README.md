@@ -20,11 +20,19 @@ Istio on K8s gives us new ways to easily visualize, monitor and trace our traffi
 
 1. [Absolute Minimum](minimum-docs/01-prerequisites.md), to see a clj response publicly
 
+## Fixes and improvements
+
+Sort out last few technical details
+Write the exposition
+Add back links in each page, for the previous step?
+
 ## Future additions
 
-2. microservices?
-3. Luminus?
-4. istio?
-5. Perhaps rewrite bookinfo?
-     https://github.com/istio/istio/blob/master/samples/bookinfo/src/details/details.rb
-     Also see istio-0.6.0/samples/bookinfo/kube/*
+1. Show two microservice interacting.
+2. Luminus example, adding a database, etc.
+3. Config maps
+4. Secrets
+5. Volume mounts
+6. Health & Liveliness checks
+7. [Istio](https://istio.io/about/intro.html) example, rewriting [bookinfo](https://github.com/istio/istio/blob/master/samples/bookinfo/src/details/details.rb), showing metrics and tracing.
+     
