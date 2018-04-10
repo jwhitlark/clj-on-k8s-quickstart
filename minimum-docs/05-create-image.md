@@ -1,8 +1,6 @@
 # Create the Docker Image
 
-**TODO: put project name in shell var, for ease of use.**
-
-## Normally
+## Create the Dockerfile
 
 ``` dockerfile
 FROM clojure:lein-alpine
@@ -14,11 +12,13 @@ RUN lein uberjar
 CMD ["java", "-jar", "target/hey-0.0.1-standalone.jar"]
 ```
 
+## Build it
+
 ``` console
 $ docker image build -t clj-on-k8s/hey:0.0.1 .
 ```
 
-This image weighs in at 157MB.  See [Minimal Image](05b-minimal-image.md) for how to lower the size of the deployed image.
+This image weighs in at 157MB.  See [Minimal Image](05b-minimal-image.md) for how to lower the size of the deployed image using Java 10 and jlink.
 
 ## Run the image locally
 
