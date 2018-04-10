@@ -2,7 +2,7 @@
 
 ## Google Cloud Platform
 
-To get started fast, we're using GCP and Google K8s.  You can get a $300 credit for signing up.  This cluster is expected to cost < $5 day.
+To get started fast, we're using GCP and Google K8s.  You can get a $300 credit for signing up.  This cluster is expected to cost ~ $5 day.
 
 ### Signing up for a GCP account
 
@@ -10,9 +10,8 @@ https://cloud.google.com/free/
 
 ## Services we'll be using.
 
-### GCP Kubernetes Engine
-
-### GCP Container Registry
+* GCP Kubernetes Engine
+* GCP Container Registry
 
 More info: 
 https://cloud.google.com/container-registry/docs/quickstart
