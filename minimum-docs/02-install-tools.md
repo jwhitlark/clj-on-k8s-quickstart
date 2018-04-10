@@ -22,15 +22,19 @@ The [Kubernetes Engine Quickstart](https://cloud.google.com/kubernetes-engine/do
 
 ### Set default project
 
-gcloud config set project [PROJECT_ID]
+``` console
+$ gcloud config set project [PROJECT_ID]
+```
 
 ### Set default compute zone
 
-gcloud config set compute/zone [COMPUTE_ZONE]
+``` console
+$ gcloud config set compute/zone [COMPUTE_ZONE]
+```
 
 I use us-west1-a
 
-## Expected versions
+## Versions used as of this writing.
 
 ### Docker
 
