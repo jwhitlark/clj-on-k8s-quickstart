@@ -18,7 +18,17 @@ See the [Docker Install Guide](https://docs.docker.com/install/)
 
 ## Installing gcloud and kubectl
 
-The [Kubernetes Engine Quickstart](https://cloud.google.com/kubernetes-engine/docs/quickstart) shows how to quickly install the tools you need, and run a minimal generic app to verify your setup.  **Be sure to follow the instructions for Local Shell**
+The [Kubernetes Engine Quickstart](https://cloud.google.com/kubernetes-engine/docs/quickstart) shows how to quickly install the tools you need, and run a minimal generic app to verify your setup.  **Be sure to follow the instructions for Local Shell.**
+
+### Set default project
+
+gcloud config set project [PROJECT_ID]
+
+### Set default compute zone
+
+gcloud config set compute/zone [COMPUTE_ZONE]
+
+I use us-west1-a
 
 ## Expected versions
 

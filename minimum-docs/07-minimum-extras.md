@@ -1,8 +1,8 @@
 # Extras for the minimum example
 
-**TODO: Mostly ideas, needs cleanup.**
-
 ## Health/liveliness checks
+
+**TODO**
 
 ## K8s Dashboard
 
