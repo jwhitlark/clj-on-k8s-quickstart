@@ -14,7 +14,7 @@ Add the following to the project.clj
 
 ## Replace the Dockerfile
 
-There isn't a Java 10 Clojure build, so we'll need to install Leiningen manually.
+There isn't a Java 10 Clojure build, so we'll need to install Leiningen manually.  Most of this is lifted from [this Dockerfile](https://github.com/Quantisan/docker-clojure/blob/master/alpine/lein/Dockerfile).
 
 ``` dockerfile
 FROM openjdk:10-jdk as build
