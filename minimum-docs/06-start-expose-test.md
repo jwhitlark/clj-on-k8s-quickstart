@@ -102,9 +102,9 @@ GKE Container,hello-clojure,default
 kubectl delete svc,deployment hello-clj
 ```
 
-That does it for the minimum, but I recommend you look at the [Minimum Extras](07-minimum-extras.md)
+That does it for the minimum, but I recommend you look at the [Minimum Extras](07-minimum-extras.md) or you can go [back to the Readme](../README.md).
 
-Now you can take down your cluster, see [Cleanup](99-cleanup.md)
+Don't forget to take down your cluster, so you won't be charged for it!  See [Cleanup](99-cleanup.md)
 
-Next: [Back to Readme](../README.md)
+
 

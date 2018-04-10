@@ -1,28 +1,19 @@
 # Extras for the minimum example
 
+**TODO: Mostly ideas, needs cleanup.**
+
 ## Health/liveliness checks
 
-**TODO**
+## K8s Dashboard
 
-Use kubectl edit ????
-
-   livenessProbe:
-      httpGet:
-        path: /healthz
-        port: 8080
-        httpHeaders:
-        - name: X-Custom-Header
-          value: Awesome
-      initialDelaySeconds: 3
-      periodSeconds: 3
-
-## K8s Dashboard/Cloud console
-
-kubectl proxy
-
+``` console
+$ kubectl proxy
+```
+Then go to:
 http://localhost:8001
 
-or (preferred on GCP)
+## GCP K8s Cloud Console
+(preferred on GCP)
 
 https://console.cloud.google.com/kubernetes/workload
 
@@ -68,51 +59,5 @@ telnet 127.0.0.1 5555
 **TODO**
 
 ## SSL
-**Oops.  Needs rethink.  The stack overflow seems the best so far.**
-
-https://cloud.google.com/kubernetes-engine/docs/tutorials/http-balancer
-
-https://stackoverflow.com/questions/42109659/how-to-get-ssl-on-a-kubernetes-application
-
-1. Change the svc type to nodeport
-
-``` console
-kubectl expose deployment hello-clj --target-port=3000 --type=NodePort
-```
-
-2. Verify it was created  **UPDATE_ME**
-
-``` console
-kubectl get service hello-clj
-NAME      TYPE       CLUSTER-IP      EXTERNAL-IP   PORT(S)          AGE
-web       NodePort   10.35.245.219   <none>        8080:32640/TCP   5m
-```
-
-3. Write the yaml for the ingress object
-
-basic-ingress.yaml
-``` yaml
-apiVersion: extensions/v1beta1
-kind: Ingress
-metadata:
-  name: basic-ingress
-spec:
-  backend:
-    serviceName: hello-clj
-    servicePort: 3000
-```
-
-4. Create the ingress object
-
-``` console
-$ kubectl apply -f basic-ingress.yaml
-```
-
-5. Hmm.  This isn't correct.....
-
-See https://kubernetes.io/docs/concepts/services-networking/ingress/#tls
-
-and
-
-https://cloud.google.com/endpoints/docs/openapi/enabling-ssl
+**TODO**
 
