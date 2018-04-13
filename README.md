@@ -1,6 +1,6 @@
 # clj-on-k8s-quickstart
 
-Note: I've been meaning to add exposition to this, but haven't had the
+**Note:** I've been meaning to add exposition to this, but haven't had the
 time lately.  Rather than let it languish on my hard drive, I'm
 pushing it out in its current form.  Everything should work, start to
 finish, I just don't explain all that I'd like.  That said, it does
@@ -39,5 +39,5 @@ Istio on K8s gives us new ways to easily visualize, monitor and trace our traffi
      
 ## Thanks!
 
-To Yogthos, for his advice and all the work his put into the Clojure community.
-To Sunng for his work on [lein-jlink](https://github.com/sunng87/lein-jlink).
+* To Yogthos, for his advice and all the work his put into the Clojure community.
+* To Sunng for his work on [lein-jlink](https://github.com/sunng87/lein-jlink).
