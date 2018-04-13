@@ -59,7 +59,16 @@ telnet 127.0.0.1 5555
 **TODO**
 
 ## SSL
+
 **TODO**
+
+Need to use an Ingress, which creates an HTTP(S) Load Balancer and supports global IP addresses.
+
+https://cloud.google.com/kubernetes-engine/docs/tutorials/http-balancer
+
+Background info:
+
+https://cloud.google.com/kubernetes-engine/docs/tutorials/http-balancer#background
 
 When you're ready, you can go [back to the Readme](../README.md).
 

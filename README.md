@@ -1,8 +1,14 @@
 # clj-on-k8s-quickstart
 
+Note: I've been meaning to add exposition to this, but haven't had the
+time lately.  Rather than let it languish on my hard drive, I'm
+pushing it out in its current form.  Everything should work, start to
+finish, I just don't explain all that I'd like.  That said, it does
+show one path through all the issues I found in putting it together.
+
 ## Goals and Rational
 
-It's an exciting time.  
+It's an exciting time.
 
 Clojure has always been a clean and powerful language with nice interop with the JVM
 
@@ -18,21 +24,20 @@ Istio on K8s gives us new ways to easily visualize, monitor and trace our traffi
 
 ## Paths through this.
 
-1. [Absolute Minimum](minimum-docs/01-prerequisites.md), to see a clj response publicly
+1. The [Minimum](minimum-docs/01-prerequisites.md) to see a clj response publicly.
 
-## Fixes and improvements
-
-Sort out last few technical details
-Write the exposition
-Add back links in each page, for the previous step?
 
 ## Future additions
 
 1. Show two microservice interacting.
 2. Luminus example, adding a database, etc.
-3. Config maps
+3. More config maps examples
 4. Secrets
 5. Volume mounts
 6. Health & Liveliness checks
 7. [Istio](https://istio.io/about/intro.html) example, rewriting [bookinfo](https://github.com/istio/istio/blob/master/samples/bookinfo/src/details/details.rb), showing metrics and tracing.
      
+## Thanks!
+
+To Yogthos, for his advice and all the work his put into the Clojure community.
+To Sunng for his work on [lein-jlink](https://github.com/sunng87/lein-jlink).
