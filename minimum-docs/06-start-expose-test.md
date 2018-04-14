@@ -8,6 +8,8 @@ $ kubectl run hello-clj --image gcr.io/core-XXXXXX/hey:0.0.1 --port 3000 --env="
 deployment "hello-clj" created
 ```
 
+Optionally, you can add `--dry-run -o yaml > hey-deployment.yaml` to the above command to create the yaml describing the deployment created, and then run it separately via `kubectl create -f hey-deployment.yaml`
+
 ### See what you've got
 
 ``` console

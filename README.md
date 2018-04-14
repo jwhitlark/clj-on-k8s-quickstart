@@ -29,7 +29,7 @@ Istio on K8s gives us new ways to easily visualize, monitor and trace our traffi
 
 ## Future additions
 
-1. Show two microservice interacting.
+1. Show two microservices interacting.
 2. Luminus example, adding a database, etc.
 3. More config maps examples
 4. Secrets
@@ -39,5 +39,5 @@ Istio on K8s gives us new ways to easily visualize, monitor and trace our traffi
      
 ## Thanks!
 
-* To Yogthos, for his advice and all the work his put into the Clojure community.
+* To Yogthos, for his advice and all the work he has put into the Clojure community.
 * To Sunng for his work on [lein-jlink](https://github.com/sunng87/lein-jlink).
